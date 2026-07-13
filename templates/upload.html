@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Upload File{% endblock %}
+
+{% block content %}
+
+<div class="upload-container">
+
+<h1>Upload Your File</h1>
+
+<form action="/upload" method="POST" enctype="multipart/form-data">
+
+<label>Document Category</label>
+
+<select name="category" required>
+
+    <option value="">Select Category</option>
+
+    <option value="aadhaar">Aadhaar Card</option>
+
+    <option value="pan">PAN Card</option>
+
+    <option value="passport">Passport</option>
+
+    <option value="driving_licence">Driving Licence</option>
+
+    <option value="voter_id">Voter ID</option>
+
+    <option value="birth_certificate">Birth Certificate</option>
+
+    <option value="tenth_memo">10th Memo</option>
+
+    <option value="intermediate_memo">Intermediate Memo</option>
+
+    <option value="resume">Resume</option>
+
+    <option value="certificates">Certificates</option>
+
+    <option value="projects">Projects</option>
+
+    <option value="achievements">Achievements</option>
+
+    <option value="other">Other</option>
+
+</select>
+
+<br><br>
+
+<label>Select File</label>
+
+<input
+type="file"
+name="file"
+required
+>
+
+<br><br>
+
+<button type="submit">
+Upload
+</button>
+
+</form>
+
+</div>
+
+{% endblock %}

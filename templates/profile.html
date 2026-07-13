@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block content %}
+
+<div class="profile-container">
+
+    <h1>My Profile</h1>
+
+
+    <div class="profile-card">
+
+
+        {% if user[5] %}
+
+        <img
+src="{{ photo_url }}"
+alt="Profile Photo"
+width="150"
+height="150"
+style="border-radius:50%; object-fit:cover;"
+>
+
+        {% else %}
+
+        <img 
+            src="{{ url_for('static', filename='default_profile.png') }}"
+            alt="Default Profile"
+            width="150"
+            height="150"
+            style="border-radius:50%;"
+        >
+
+        {% endif %}
+
+
+
+        <h2>{{ user[0] }}</h2>
+
+
+        <p>
+            <b>Phone:</b> {{ user[1] }}
+        </p>
+
+
+        <p>
+            <b>Email:</b> {{ user[2] }}
+        </p>
+
+
+        <p>
+            <b>Date of Birth:</b> {{ user[3] }}
+        </p>
+
+
+        <p>
+            <b>Gender:</b> {{ user[4] }}
+        </p>
+
+
+        <br>
+
+
+        <a href="{{ url_for('edit_profile') }}">
+            <button>
+                Edit Profile
+            </button>
+        </a>
+
+
+        <a href="{{ url_for('dashboard') }}">
+            <button>
+                Back to Dashboard
+            </button>
+        </a>
+
+
+    </div>
+
+
+</div>
+
+{% endblock %}

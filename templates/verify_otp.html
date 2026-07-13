@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Verify OTP{% endblock %}
+
+
+{% block content %}
+
+<div class="profile-container">
+
+<h1>Verify OTP</h1>
+
+
+<form action="/verify_otp" method="POST">
+
+
+<label>Enter OTP</label>
+
+<input 
+type="number"
+name="otp"
+placeholder="Enter 6 digit OTP"
+required
+>
+
+
+<button type="submit">
+Verify OTP
+</button>
+
+
+</form>
+
+
+</div>
+
+{% endblock %}
